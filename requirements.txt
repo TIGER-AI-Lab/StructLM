@@ -1,0 +1,57 @@
+accelerate==0.23.0
+backports.functools-lru-cache==1.6.5
+bert-score==0.3.13
+cmake==3.27.6
+delta-center-client==0.0.4
+dnspython==2.4.2
+entrypoints==0.4
+evaluate==0.4.1
+fastavro==1.8.4
+fasteners==0.19
+fire==0.5.0
+fqdn==1.5.1
+func-timeout==4.3.5
+hdfs==2.7.2
+hf-transfer==0.1.3
+isoduration==20.11.0
+jsonify==0.5
+jsonpointer==2.4
+lit==17.0.2
+markdown-it-py==3.0.0
+nvidia-cuda-cupti-cu11==11.7.101
+nvidia-cuda-nvrtc-cu11==11.7.99
+nvidia-cuda-runtime-cu11==11.7.99
+nvidia-cudnn-cu11==8.5.0.96
+nvidia-cufft-cu11==10.9.0.58
+nvidia-curand-cu11==10.2.10.91
+nvidia-cusolver-cu11==11.4.0.1
+nvidia-cusparse-cu11==11.7.4.91
+nvidia-nccl-cu11==2.14.3
+nvidia-nvtx-cu11==11.7.91
+python-dotenv==1.0.0
+rapidfuzz==3.3.1
+rdflib==7.0.0
+rouge-score==0.1.2
+sacrebleu==2.3.2
+sqlparse==0.4.4
+tomlkit==0.12.1
+uri-template==1.3.0
+uvloop==0.17.0
+watchfiles==0.20.0
+web.py==0.62
+webcolors==1.13
+websockets==11.0.3
+wikiextractor==3.0.6
+word2number==1.1
+
+# transformers
+# vllm
+# torch
+# rapidfuzz
+# sqlparse
+# word2number
+# wikiextractor
+# rouge-score
+# sacrebleu
+# rdflib
+# func-timeout

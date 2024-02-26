@@ -1,0 +1,14 @@
+cd /ML-A100/team/mm/zhangge/gezhangmv/SKGLM/uskg_eval/launchers
+./run_test_eval.sh v13_sparc_single_task_ft_e3
+./run_test_eval.sh v13_compwebq_single_task_ft_e1
+./run_test_eval.sh v13_compwebq_single_task_ft_e2
+./run_test_eval.sh v13_compwebq_single_task_ft_e3
+./run_test_eval.sh v13_tab_fact_single_task_ft_e1
+./run_test_eval.sh v13_tab_fact_single_task_ft_e2
+./run_test_eval.sh v13_tab_fact_single_task_ft_e3
+./run_test_eval.sh v13_wikitq_single_task_ft_e1
+./run_test_eval.sh v13_wikitq_single_task_ft_e2
+./run_test_eval.sh v13_wikitq_single_task_ft_e3
+./run_test_eval.sh v13_wikisql_single_task_ft_e1
+./run_test_eval.sh v13_wikisql_single_task_ft_e2
+./run_test_eval.sh v13_wikisql_single_task_ft_e3

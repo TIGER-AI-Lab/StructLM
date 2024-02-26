@@ -1,0 +1,14 @@
+cd /ML-A100/team/mm/zhangge/gezhangmv/SKGLM/uskg_eval/launchers
+./run_test_eval.sh v13_fetaqa_single_task_ft_e1
+./run_test_eval.sh v13_fetaqa_single_task_ft_e2
+./run_test_eval.sh v13_fetaqa_single_task_ft_e3
+./run_test_eval.sh v13_feverous_single_task_ft_e1
+./run_test_eval.sh v13_feverous_single_task_ft_e2
+./run_test_eval.sh v13_feverous_single_task_ft_e3
+./run_test_eval.sh v13_multiwoz_single_task_ft_e1
+./run_test_eval.sh v13_multiwoz_single_task_ft_e2
+./run_test_eval.sh v13_multiwoz_single_task_ft_e3
+./run_test_eval.sh v13_dart_single_task_ft_e1
+./run_test_eval.sh v13_dart_single_task_ft_e2
+./run_test_eval.sh v13_dart_single_task_ft_e3
+./run_test_eval.sh v13_logic2text_single_task_ft_e1
