@@ -46,6 +46,23 @@
     <link rel="stylesheet" type="text/css" href="static/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="static/js/jquery-3.5.1.js"></script>
     <script type="text/javascript" charset="utf8" src="static/js/jquery.dataTables.js"></script>
+    <style>
+        #special-table tbody tr td:nth-child(3),
+        #special-table tbody tr td:nth-child(7) {
+            padding-right: 20px;
+        }
+        #special-table tbody tr td:nth-child(4),
+        #special-table tbody tr td:nth-child(8) {
+            padding-left: 20px;
+        }
+
+        .number-box {
+            border: 1px solid #000; /* 黑色边框 */
+            padding: 3px; /* 内边距 */
+            margin: 3px; /* 外边距 */
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -164,18 +181,1016 @@
     </section>
     <!-- End paper abstract -->
 
+    <!-- Image carousel -->
+    <section class="hero">
+        <!-- Add a title here -->
+        <h2 class="title has-text-centered">Overview of StructLM</h2>
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/thumbnail.drawio.png" />
+                            <h2 class="subtitle">
+                                This figure illustrates the prompting structure of StructLM, highlighting its
+                                capability to process various forms of structured data beyond linearized data tables, including linearized database
+                                schemas and knowledge graphs. StructLM is also assessed on held-out tasks that bear similarity to groups of held-in
+                                tasks, but also differences that must be overcome.
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End image carousel -->
 
     <section class="hero">
         <div class="hero-body">
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
-                    <div class="column has-text-centered">
-                        <h2 class="title is-3">Coming soon...</h2>
+                    <div class="column has-text-centered is-fifths-fifths">
+                        <h2 class="title is-3">Our Datasets</h2>
+                        <div class="buttonGroup" data-table-id="#tabResults1">
+                            <button value="ALL">All</button>
+                            <button value="T1HI">Held In</button>
+                            <button value="T1HO">Held Out</button>
+                        </div>
+                        <table id="special-table" class="table table-bordered table-hover table-custom">
+                            <thead class="thead-light">
+                                <tr style="text-align: center;">
+                                    <th rowspan="2" style="vertical-align: middle; font-size: 25px;">Dataset</th>
+                                    <th colspan="2" style="font-size: 20px;">Overall Length</th>
+                                    <th colspan="4" style="font-size: 20px;">Train</th>
+                                    <th colspan="4" style="font-size: 20px;">Test</th>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <th>Input (avg)</th>
+                                    <th style="padding-right: 20px;">Output (avg)</th>
+                                    <th style="vertical-align: middle; padding-left: 20px;">Count</th>
+                                    <th>Input (max)</th>
+                                    <th>Output (max)</th>
+                                    <th style="vertical-align: middle; padding-right: 20px;">#Trunc.</th>
+                                    <th style="vertical-align: middle; padding-left: 20px;">Count</th>
+                                    <th>Input (max)</th>
+                                    <th>Output (max)</th>
+                                    <th style="vertical-align: middle;">#Trunc.</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabResults1" style="text-align: center">
+                                <tr class="th">
+                                    <td id="T1HI" colspan="11" style="text-align: center; font-weight: bold;">Held In</td>
+                                </tr>
+                                <tr>
+                                    <td>TabMWP</td>
+                                    <td>207.8</td>
+                                    <td>4.5</td>
+                                    <td>23059</td>
+                                    <td>709</td>
+                                    <td>33</td>
+                                    <td>0</td>
+                                    <td>7686</td>
+                                    <td>703</td>
+                                    <td>31</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>ToTTo</td>
+                                    <td>251.8</td>
+                                    <td>31.0</td>
+                                    <td>120761</td>
+                                    <td>2040</td>
+                                    <td>155</td>
+                                    <td>467</td>
+                                    <td>7700</td>
+                                    <td>2048</td>
+                                    <td>119</td>
+                                    <td>31</td>
+                                </tr>
+                                <tr>
+                                    <td>GrailQA</td>
+                                    <td>281.0</td>
+                                    <td>44.1</td>
+                                    <td>44337</td>
+                                    <td>884</td>
+                                    <td>134</td>
+                                    <td>0</td>
+                                    <td>6463</td>
+                                    <td>546</td>
+                                    <td>123</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>SQL2Text</td>
+                                    <td>122.3</td>
+                                    <td>18.1</td>
+                                    <td>5600</td>
+                                    <td>337</td>
+                                    <td>61</td>
+                                    <td>0</td>
+                                    <td>1034</td>
+                                    <td>245</td>
+                                    <td>38</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>MMQA</td>
+                                    <td>656.2</td>
+                                    <td>7.7</td>
+                                    <td>15688</td>
+                                    <td>2047</td>
+                                    <td>146</td>
+                                    <td>234</td>
+                                    <td>1501</td>
+                                    <td>2048</td>
+                                    <td>94</td>
+                                    <td>11</td>
+                                </tr>
+                                <tr>
+                                    <td>Spider</td>
+                                    <td>266.6</td>
+                                    <td>36.0</td>
+                                    <td>7000</td>
+                                    <td>1369</td>
+                                    <td>226</td>
+                                    <td>0</td>
+                                    <td>1034</td>
+                                    <td>453</td>
+                                    <td>146</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>KVRet</td>
+                                    <td>573.4</td>
+                                    <td>17.1</td>
+                                    <td>6288</td>
+                                    <td>1217</td>
+                                    <td>161</td>
+                                    <td>0</td>
+                                    <td>807</td>
+                                    <td>1147</td>
+                                    <td>82</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>HybridQA</td>
+                                    <td>700.4</td>
+                                    <td>6.8</td>
+                                    <td>62682</td>
+                                    <td>2047</td>
+                                    <td>91</td>
+                                    <td>200</td>
+                                    <td>3466</td>
+                                    <td>2048</td>
+                                    <td>79</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>SParC</td>
+                                    <td>276.3</td>
+                                    <td>32.6</td>
+                                    <td>12059</td>
+                                    <td>1417</td>
+                                    <td>226</td>
+                                    <td>0</td>
+                                    <td>1625</td>
+                                    <td>467</td>
+                                    <td>146</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>CompWebQ</td>
+                                    <td>1350.3</td>
+                                    <td>11.9</td>
+                                    <td>27639</td>
+                                    <td>2047</td>
+                                    <td>321</td>
+                                    <td>321</td>
+                                    <td>2816</td>
+                                    <td>2048</td>
+                                    <td>256</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>TabFact</td>
+                                    <td>660.1</td>
+                                    <td>4.6</td>
+                                    <td>92283</td>
+                                    <td>2045</td>
+                                    <td>5</td>
+                                    <td>2</td>
+                                    <td>12779</td>
+                                    <td>1687</td>
+                                    <td>4</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>WikiTQ</td>
+                                    <td>831.8</td>
+                                    <td>5.8</td>
+                                    <td>11321</td>
+                                    <td>2028</td>
+                                    <td>273</td>
+                                    <td>0</td>
+                                    <td>4344</td>
+                                    <td>2048</td>
+                                    <td>148</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>WikiSQL</td>
+                                    <td>689.2</td>
+                                    <td>7.1</td>
+                                    <td>56355</td>
+                                    <td>2047</td>
+                                    <td>518</td>
+                                    <td>16</td>
+                                    <td>15878</td>
+                                    <td>2048</td>
+                                    <td>244</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>FeTaQA</td>
+                                    <td>653.2</td>
+                                    <td>38.8</td>
+                                    <td>7326</td>
+                                    <td>1853</td>
+                                    <td>158</td>
+                                    <td>0</td>
+                                    <td>2003</td>
+                                    <td>1548</td>
+                                    <td>114</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>FEVEROUS</td>
+                                    <td>799.3</td>
+                                    <td>3.4</td>
+                                    <td>40669</td>
+                                    <td>2047</td>
+                                    <td>5</td>
+                                    <td>2052</td>
+                                    <td>4285</td>
+                                    <td>2048</td>
+                                    <td>4</td>
+                                    <td>195</td>
+                                </tr>
+                                <tr>
+                                    <td>MultiWOZ</td>
+                                    <td>777.2</td>
+                                    <td>154.5</td>
+                                    <td>56668</td>
+                                    <td>1656</td>
+                                    <td>196</td>
+                                    <td>0</td>
+                                    <td>7368</td>
+                                    <td>1344</td>
+                                    <td>185</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>DART</td>
+                                    <td>133.7</td>
+                                    <td>30.3</td>
+                                    <td>62659</td>
+                                    <td>406</td>
+                                    <td>258</td>
+                                    <td>0</td>
+                                    <td>5097</td>
+                                    <td>261</td>
+                                    <td>109</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Logic2Text</td>
+                                    <td>166.1</td>
+                                    <td>26.9</td>
+                                    <td>8566</td>
+                                    <td>358</td>
+                                    <td>67</td>
+                                    <td>0</td>
+                                    <td>1092</td>
+                                    <td>347</td>
+                                    <td>60</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>MTOP</td>
+                                    <td>961.0</td>
+                                    <td>34.4</td>
+                                    <td>15667</td>
+                                    <td>1002</td>
+                                    <td>215</td>
+                                    <td>0</td>
+                                    <td>4386</td>
+                                    <td>990</td>
+                                    <td>113</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>SlimOrca</td>
+                                    <td>278.9</td>
+                                    <td>152.4</td>
+                                    <td>512069</td>
+                                    <td>2047</td>
+                                    <td>1808</td>
+                                    <td>0</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr class="th">
+                                    <td id="T1HO" colspan="14" style="text-align: center; font-weight: bold;">Held Out</td>
+                                </tr>
+                                <tr>
+                                    <td>BIRD</td>
+                                    <td>439.8</td>
+                                    <td>63.3</td>
+                                    <td>9428</td>
+                                    <td>1992</td>
+                                    <td>347</td>
+                                    <td>99</td>
+                                    <td>1534</td>
+                                    <td>1214</td>
+                                    <td>386</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>CoSQL</td>
+                                    <td>287.4</td>
+                                    <td>34.9</td>
+                                    <td>9502</td>
+                                    <td>1640</td>
+                                    <td>226</td>
+                                    <td>0</td>
+                                    <td>1300</td>
+                                    <td>535</td>
+                                    <td>190</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>SQA</td>
+                                    <td>656.9</td>
+                                    <td>34.9</td>
+                                    <td>12275</td>
+                                    <td>1812</td>
+                                    <td>1012</td>
+                                    <td>2</td>
+                                    <td>3011</td>
+                                    <td>1725</td>
+                                    <td>769</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Infotabs</td>
+                                    <td>276.9</td>
+                                    <td>3.7</td>
+                                    <td>16538</td>
+                                    <td>1009</td>
+                                    <td>5</td>
+                                    <td>0</td>
+                                    <td>5400</td>
+                                    <td>1105</td>
+                                    <td>4</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>WikiTableText</td>
+                                    <td>149.6</td>
+                                    <td>27.4</td>
+                                    <td>10000</td>
+                                    <td>313</td>
+                                    <td>97</td>
+                                    <td>0</td>
+                                    <td>2000</td>
+                                    <td>226</td>
+                                    <td>89</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Finqa</td>
+                                    <td>1230.3</td>
+                                    <td>21.0</td>
+                                    <td>6251</td>
+                                    <td>2040</td>
+                                    <td>72</td>
+                                    <td>186</td>
+                                    <td>1147</td>
+                                    <td>2048</td>
+                                    <td>61</td>
+                                    <td>25</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2 class="subtitle">Token sequence length statistics for each dataset in our train and test sets. Input and output statistics are in
+                            tokens. We report the number of examples which have been truncated in each dataset.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image carousel -->
+    <section class="hero">
+        <!-- Add a title here -->
+        <h2 class="title has-text-centered">Ours results</h2>
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/teaser.png" />
+                            <h2 class="subtitle">
+                                StructLM can ground on structured and unstructured knowledge to respond to human queries. 
+                                The previous SoTA was attained by many different task-specific models like TAPEX, USKG, TableLLaMA, BINDER-Codex, etc. 
+                                StructLM (a single model) beats the previous SoTAs on seven out of eighteen SKG tasks.
+                            </h2>
+                            <!-- Your image here -->
+                            <img src="static/images/echarts.png" />
+                            <h2 class="subtitle">
+                                Effect of different pretraining curricula on SKG finetuning performance in relevant task groupings.
+                            </h2>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End image carousel -->
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <table class="table table-bordered table-hover table-custom">
+                            <thead class="thead-light">
+                                <tr style="text-align: center; font-size: 20px;">
+                                    <th>Purpose</th>
+                                    <th>Train</th>
+                                    <th>Eval</th>
+                                    <th>FT</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody style="text-align: center;">
+                                <tr>
+                                    <td>Schema task transfer</td>
+                                    <td>Spider, SParC, Logic2Text</td>
+                                    <td>Logic2Text</td>
+                                    <td>89.47</td>
+                                    <td>89.93</td>
+                                </tr>
+                                <tr>
+                                    <td>KT task transfer</td>
+                                    <td>CompWebQ, WebQSP, GrailQa, Dart</td>
+                                    <td>Dart</td>
+                                    <td>60.28</td>
+                                    <td>60.34</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: middle;">Table task transfer</td>
+                                    <td>
+                                    <ul>
+                                        <li>FetaQA, HybridQA, WikiTQ,</li>
+                                        <li>TabMWP, ToTTo, MMQA,</li>
+                                        <li>WikiSQL, KVRet, Tab Fact,</li>
+                                        <li>Feverous, Infotabs</li>
+                                    </ul>
+                                    </td>
+                                    <td  style="vertical-align: middle;">
+                                    <ul>
+                                        <li>TabFact,</li>
+                                        <li>Feverous,</li>
+                                        <li>Infotabs</li>
+                                    </ul>
+                                    </td>
+                                    <td style="vertical-align: middle;">75.46</td>
+                                    <td style="vertical-align: middle;">80.81</td>
+                                </tr>
+                                <tr>
+                                    <td>Summ. data type transfer</td>
+                                    <td>ToTTo, Dart</td>
+                                    <td>Dart</td>
+                                    <td>60.28</td>
+                                    <td>61.42</td>
+                                </tr>
+                                <tr>
+                                    <td>QA data type transfer</td>
+                                    <td>CompWebQ, WikiSQL</td>
+                                    <td>WikiSQL</td>
+                                    <td>85.49</td>
+                                    <td>86.36</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <caption>Cross task and cross datatype transfer results. FT is an average of single-task performance over the datasets in the Eval column.</caption>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image carousel -->
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered is-fifths-fifths">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/orca_resize.png" />
+                            <h2 class="subtitle">
+                                Effect of general instruction-following data on held-out SKG dataset performance. 
+                                Performance is measured as the average over evaluation metrics across all tasks within held-in or held-out groups.
+                                Note that the held-in performance experiences a milder dip compared to the held-out performance gains.
+                            </h2>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End image carousel -->
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered is-fifths-fifths">
+                        <h2 class="title is-3">The evaluation results of our model against other baselines</h2>
                         <div class="content has-text-justified">
+                            <div class="buttonGroup" data-table-id="#tabResults2">
+                                <button value="ALL">All</button>
+                                <button value="T2HI">Held In</button>
+                                <button value="T2HO">Held Out</button>
+                            </div>
+                            <table>
+                                <thead class="thead-light">
+                                    <tr style="text-align: center; font-size: 20px;">
+                                        <th>Dataset</th>
+                                        <th>Metric</th>
+                                        <th>SoTA</th>
+                                        <th>ChatGPT</th>
+                                        <th>Base</th>
+                                        <th>ST</th>
+                                        <th>UL2</th>
+                                        <th>TabLLaMA</th>
+                                        <th>USKG</th>
+                                        <th colspan="3">StructLM(Ours)</th>
+                                        <th>Δ</th>
+                                      </tr>
+                                    <tr style="text-align: center; font-size: 20px;">
+                                        <th>Size</th>
+                                        <th>-</th>
+                                        <th>-</th>
+                                        <th>-</th>
+                                        <th>7B</th>
+                                        <th>7B×18</th>
+                                        <th>20B</th>
+                                        <th>7B</th>
+                                        <th>3B×18</th>
+                                        <th>7B</th>
+                                        <th>13B</th>
+                                        <th>34B</th>
+                                        <th>-</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabResults2" style="text-align: center;">
+                                    <tr class="th">
+                                        <td id="T2HI" colspan="13" style="text-align: center; font-weight: bold;">Held In</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ToTTo</td>
+                                        <td>BLEU</td>
+                                        <td>49.9</td>
+                                        <td>20.7</td>
+                                        <td>17.5</td>
+                                        <td>48.8</td>
+                                        <td>-</td>
+                                        <td>20.7</td>
+                                        <td>49.0</td>
+                                        <td>49.4</td>
+                                        <td>49.3</td>
+                                        <td><span class="number-box"><strong>50.2</strong></span></td>
+                                        <td>+1.2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GrailQA</td>
+                                        <td>EM</td>
+                                        <td>77.1</td>
+                                        <td>9.3</td>
+                                        <td>1.0</td>
+                                        <td>77.0</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>70.1</td>
+                                        <td>80.4</td>
+                                        <td>79.2</td>
+                                        <td><span class="number-box"><strong>82.2</strong></span></td>
+                                        <td>+12.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SQL2Text</td>
+                                        <td>Blec</td>
+                                        <td>94.8</td>
+                                        <td>88.6</td>
+                                        <td>82.9</td>
+                                        <td>95.2</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td><strong>94.8</strong></td>
+                                        <td>93.8</td>
+                                        <td>88.5</td>
+                                        <td>92.6</td>
+                                        <td>-1.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MMQA</td>
+                                        <td>F1</td>
+                                        <td>85.3</td>
+                                        <td>59.6</td>
+                                        <td>30.7</td>
+                                        <td>81.5</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>85.3</td>
+                                        <td>85.2</td>
+                                        <td>86.0</td>
+                                        <td><span class="number-box"><strong>88.1</strong></span></td>
+                                        <td>+2.8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Spider</td>
+                                        <td>EM</td>
+                                        <td>80.5</td>
+                                        <td>43.8</td>
+                                        <td>5.2</td>
+                                        <td>67.3</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>71.8</td>
+                                        <td>72.4</td>
+                                        <td>74.1</td>
+                                        <td><strong>74.6</strong></td>
+                                        <td>+2.8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>KVRet</td>
+                                        <td>All Micro</td>
+                                        <td>67.9</td>
+                                        <td>52.9</td>
+                                        <td>39.5</td>
+                                        <td>70.9</td>
+                                        <td>-</td>
+                                        <td>48.7</td>
+                                        <td>67.9</td>
+                                        <td><span class="number-box"><strong>72.6</strong></span></td>
+                                        <td>69.5</td>
+                                        <td>69.3</td>
+                                        <td>+4.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HybridQA</td>
+                                        <td>Acc</td>
+                                        <td>68.4</td>
+                                        <td>23.7</td>
+                                        <td>2.3</td>
+                                        <td>58.4</td>
+                                        <td>61.0</td>
+                                        <td>27.6</td>
+                                        <td>59.4</td>
+                                        <td>59.2</td>
+                                        <td>59.1</td>
+                                        <td><strong>61.1</strong></td>
+                                        <td>+1.7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SParC</td>
+                                        <td>EM</td>
+                                        <td>68.2</td>
+                                        <td>32.2</td>
+                                        <td>3.2</td>
+                                        <td>62.3</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>61.5</td>
+                                        <td>61.9</td>
+                                        <td><strong>64.9</strong></td>
+                                        <td>63.4</td>
+                                        <td>+3.4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CompWebQ</td>
+                                        <td>Acc</td>
+                                        <td>76.8</td>
+                                        <td>48.9</td>
+                                        <td>3.1</td>
+                                        <td>75.6</td>
+                                        <td>75.9</td>
+                                        <td>-</td>
+                                        <td>73.3</td>
+                                        <td>78.3</td>
+                                        <td>80.4</td>
+                                        <td><span class="number-box"><strong>81.9</strong></span></td>
+                                        <td>+8.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TabFact</td>
+                                        <td>Acc</td>
+                                        <td>93.0</td>
+                                        <td>62.4</td>
+                                        <td>0.0</td>
+                                        <td>79.6</td>
+                                        <td>87.1</td>
+                                        <td>82.5</td>
+                                        <td>83.7</td>
+                                        <td>80.8</td>
+                                        <td>84.7</td>
+                                        <td><strong>86.6</strong></td>
+                                        <td>+2.9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WikiTQ</td>
+                                        <td>All Ex</td>
+                                        <td>65.9</td>
+                                        <td>24.8</td>
+                                        <td>0.2</td>
+                                        <td>45.7</td>
+                                        <td>54.6</td>
+                                        <td>31.6</td>
+                                        <td>49.3</td>
+                                        <td>50.1</td>
+                                        <td>53.4</td>
+                                        <td><strong>55.7</strong></td>
+                                        <td>+6.4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WikiSQL</td>
+                                        <td>All Ex</td>
+                                        <td>93.0</td>
+                                        <td>31.5</td>
+                                        <td>0.4</td>
+                                        <td>86.5</td>
+                                        <td>87.3</td>
+                                        <td>41.6</td>
+                                        <td>86.0</td>
+                                        <td><strong>88.7</strong></td>
+                                        <td>87.2</td>
+                                        <td>87.6</td>
+                                        <td>+1.7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>FeTaQA</td>
+                                        <td>BLEU</td>
+                                        <td>39.0</td>
+                                        <td>7.4</td>
+                                        <td>5.6</td>
+                                        <td>33.8</td>
+                                        <td>35.8</td>
+                                        <td>39.0</td>
+                                        <td>33.4</td>
+                                        <td>36.0</td>
+                                        <td>35.6</td>
+                                        <td><strong>37.5</strong></td>
+                                        <td>+4.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>FEVEROUS</td>
+                                        <td>Acc</td>
+                                        <td>85.6</td>
+                                        <td>57.8</td>
+                                        <td>58.4</td>
+                                        <td>78.1</td>
+                                        <td>85.6</td>
+                                        <td>72.3 </td>
+                                        <td>82.4</td>
+                                        <td>84.4</td>
+                                        <td>85.0</td>
+                                        <td><span class="number-box"><strong>85.7</strong></span></td>
+                                        <td>+3.3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MultiWOZ</td>
+                                        <td>Joint Acc</td>
+                                        <td>60.6</td>
+                                        <td>8.9</td>
+                                        <td>0.0</td>
+                                        <td>53.0</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td><strong>55.4</strong></td>
+                                        <td>54.5</td>
+                                        <td>53.0</td>
+                                        <td>53.8</td>
+                                        <td>-0.9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DART</td>
+                                        <td>BLEU</td>
+                                        <td>52.0</td>
+                                        <td>59.0</td>
+                                        <td>54.6</td>
+                                        <td>60.3</td>
+                                        <td>50.4</td>
+                                        <td>-</td>
+                                        <td>46.7</td>
+                                        <td><span class="number-box"><strong>62.2</strong></span></td>
+                                        <td>61.4</td>
+                                        <td>61.8</td>
+                                        <td>+15.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Logic2Text</td>
+                                        <td>Blec</td>
+                                        <td>95.3</td>
+                                        <td>78.5</td>
+                                        <td>59.1</td>
+                                        <td>89.5</td>
+                                        <td>- </td>
+                                        <td>-</td>
+                                        <td><strong>91.4</strong></td>
+                                        <td>88.9</td>
+                                        <td>90.1</td>
+                                        <td>89.1</td>
+                                        <td>-1.3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MTOP</td>
+                                        <td>EM</td>
+                                        <td>87.5</td>
+                                        <td>1.4</td>
+                                        <td>0.0</td>
+                                        <td>77.4</td>
+                                        <td>87.5</td>
+                                        <td>-</td>
+                                        <td><strong>86.8</strong></td>
+                                        <td>81.2</td>
+                                        <td>81.6</td>
+                                        <td>82.1</td>
+                                        <td>-4.7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Average</td>
+                                        <td></td>
+                                        <td>74.9</td>
+                                        <td>39.5</td>
+                                        <td>20.2</td>
+                                        <td>68.2</td>
+                                        <td>- </td>
+                                        <td>-</td>
+                                        <td>69.3</td>
+                                        <td>71.1</td>
+                                        <td>71.3</td>
+                                        <td><strong>72.6</strong></td>
+                                        <td>+3.3</td>
+                                    </tr>
+                                    <tr class="th">
+                                        <td id="T2HO" colspan="13" style="text-align: center; font-weight: bold;">Held Out</td>
+                                    </tr>
+                                    <tr>
+                                        <td>BIRD</td>
+                                        <td>Acc</td>
+                                        <td>36.6</td>
+                                        <td>21.8</td>
+                                        <td>0.0</td>
+                                        <td>24.4</td>
+                                        <td>-</td>
+                                        <td>4.2 </td>
+                                        <td>×</td>
+                                        <td>22.3</td>
+                                        <td>22.8</td>
+                                        <td><strong>24.7</strong></td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CoSQL</td>
+                                        <td>EM</td>
+                                        <td>58.3</td>
+                                        <td>33.7</td>
+                                        <td>0.2</td>
+                                        <td>52.4</td>
+                                        <td>-</td>
+                                        <td>5.4</td>
+                                        <td>×</td>
+                                        <td>49.8</td>
+                                        <td>52.2</td>
+                                        <td><strong>55.0</strong></td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SQA</td>
+                                        <td>Acc</td>
+                                        <td>70.5</td>
+                                        <td>18.7</td>
+                                        <td>2.3</td>
+                                        <td>60.4</td>
+                                        <td>70.1</td>
+                                        <td>2.0 </td>
+                                        <td>×</td>
+                                        <td><strong>49.7</strong></td>
+                                        <td>36.1</td>
+                                        <td>44.2</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Infotabs</td>
+                                        <td>Acc</td>
+                                        <td>75.6</td>
+                                        <td>46.9</td>
+                                        <td>40.2</td>
+                                        <td>68.7</td>
+                                        <td>-</td>
+                                        <td>35.5</td>
+                                        <td>×</td>
+                                        <td>55.3</td>
+                                        <td>58.1</td>
+                                        <td><strong>61.8</strong></td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WikiTableText</td>
+                                        <td>BLEU</td>
+                                        <td>33.7</td>
+                                        <td>3.8</td>
+                                        <td>5.7</td>
+                                        <td>39.8</td>
+                                        <td>-</td>
+                                        <td>10.2</td>
+                                        <td>×</td>
+                                        <td>8.3</td>
+                                        <td><strong>9.3</strong></td>
+                                        <td>8.8</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Finqa</td>
+                                        <td>Acc</td>
+                                        <td>71.1</td>
+                                        <td>31.4</td>
+                                        <td>1.7</td>
+                                        <td>79.7</td>
+                                        <td>-</td>
+                                        <td>18.6 </td>
+                                        <td>×</td>
+                                        <td>27.3</td>
+                                        <td>25.6</td>
+                                        <td><strong>36.2</strong></td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Average</td>
+                                        <td></td>
+                                        <td>57.6</td>
+                                        <td>26.1</td>
+                                        <td>8.4</td>
+                                        <td>54.2</td>
+                                        <td>-</td>
+                                        <td>12.6</td>
+                                        <td>×</td>
+                                        <td>35.5</td>
+                                        <td>34.0</td>
+                                        <td><strong>38.4</strong></td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="content has-text-justified">
+                                <p>The held-in evaluation results of our model against other baselines. TabLLaMA refers to the table fine-tuned LLaMA, 
+                                the Held-out results are obtained by us. BASE refers to the 1-shot performance of CodeLlama-Instruct-7B.
+                                Single FT refers to the single-task finetuning result of CodeLlama-Instruct-7B on each dataset.
+                                <span class="number-box">XYZ</span> denotes the state-of-the-art score achieved by us. All StructLM held-out results are 0-shot.</h2>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+
+    <!-- BibTex citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            Please kindly cite our paper if you use our code, data, models or results:
+            <br><br>
+            <pre><code>@misc{zhuang2024structlm,
+    title={StructLM: Towards Building Generalist Models for Structured Knowledge Grounding}, 
+    author={Alex Zhuang and Ge Zhang and Tianyu Zheng and Xinrun Du and Junjie Wang and Weiming Ren and Stephen W. Huang and Jie Fu and Xiang Yue and Wenhu Chen},
+    year={2024},
+    eprint={2402.16671},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
+            </code></pre>
         </div>
     </section>
     
