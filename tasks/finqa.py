@@ -1,11 +1,3 @@
-'''
-Author: ygjin11 1633504509@qq.com
-Date: 2024-01-09 04:16:22
-LastEditors: ygjin11 1633504509@qq.com
-LastEditTime: 2024-02-14 09:51:20
-FilePath: /uskg_eval/tasks/finqa.py
-Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-'''
 # Copyright 2020 The HuggingFace Datasets Authors and the current dataset script contributor.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +11,6 @@ Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查�
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""The WikiTableQuestions dataset is a large-scale dataset for the task of question answering on semi-structured tables."""
 
 import os
 
