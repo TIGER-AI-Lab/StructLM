@@ -3,6 +3,7 @@ import os
 import time
 
 import torch
+import importlib
 import datasets
 import transformers
 from transformers import (
@@ -13,8 +14,8 @@ from transformers import (
 from transformers.trainer_utils import get_last_checkpoint
 from collections import OrderedDict
 import utils.tool
-from utils.configue import Configure
-from utils.dataset import TokenizedDataset, TokenizedLlamaDataset, TokenizedTestDataset
+from utils.configure import Configure
+from utils.dataset import TokenizedTestDataset
 from utils.trainer import LlamaSeq2SeqTrainer
 from utils.training_arguments import WrappedSeq2SeqTrainingArguments
 import json
@@ -29,11 +30,15 @@ class DummyDataset():
     def __getitem__(self, index):
         return {}
 
+def get_model(model):
+    Model = importlib.import_module('models.{}'.format(model)).Model
+    return Model
+
+def get_evaluator(evaluate_tool):
+    EvaluateTool = importlib.import_module('{}'.format(evaluate_tool)).EvaluateTool
+    return EvaluateTool
+
 def main() -> None:
-    os.environ[
-        'CUBLAS_WORKSPACE_CONFIG'] = ':4096:8'  # Deterministic behavior of torch.addmm. Please refer to https://docs.nvidia.com/cuda/cublas/index.html#cublasApi_reproducibility
-    #torch.use_deterministic_algorithms(True) # NOTE this causes issues with VLLM
-    # Initialize the logger
     logging.basicConfig(level=logging.INFO)
 
     # Get args
@@ -45,28 +50,12 @@ def main() -> None:
     evaluator = utils.tool.get_evaluator(args.evaluate.tool)(args)
     model = utils.tool.get_model(args.model.name)(args)
     model_tokenizer = model.tokenizer
-    # model = transformers.AutoModelForCausalLM.from_pretrained(
-    #     args.model.path,``
-    #     torch_dtype=torch.float16,
-    # )
-    
 
     logging.info(f"loading test data from file {args.dataset.test_split_json}")
     assert args.dataset.test_split_json is not None, "Please specify the test split json file."
     with open(args.dataset.test_split_json) as f:
         seq2seq_test_dataset= json.load(f)
 
-    # # NOTE remove this after testing complete.
-    # dnames = set([each['arg_path'] for each in seq2seq_test_dataset])
-    # # select only one example for each dname
-    # small_dataset = []
-    # for i, each in enumerate(seq2seq_test_dataset):
-    #     if each['arg_path'] in dnames:
-    #         dnames.remove(each['arg_path'])
-    #         small_dataset.append(each)
-    # seq2seq_test_dataset = small_dataset
-    # import pdb; pdb.set_trace()
-    # We wrap the "string" seq2seq data into "tokenized tensor".
     test_dataset = TokenizedTestDataset(args, training_args, model_tokenizer,
                                     seq2seq_test_dataset) if seq2seq_test_dataset else None
 
@@ -75,8 +64,6 @@ def main() -> None:
         args=training_args,
         model=model,
         evaluator=evaluator,
-        # We name it "evaluator" while the hugging face call it "Metric",
-        # they are all f(predictions: List, references: List of dict) = eval_result: dict
         tokenizer=model_tokenizer,
     )
     logging.info('Trainer build successfully.')
