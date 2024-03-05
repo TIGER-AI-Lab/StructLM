@@ -1,12 +1,3 @@
-
-###
- # @Author: ygjin11 1633504509@qq.com
- # @Date: 2024-03-05 02:32:23
- # @LastEditors: ygjin11 1633504509@qq.com
- # @LastEditTime: 2024-03-05 02:52:57
- # @FilePath: /SKGLM/StructLM/run_test_eval.sh
- # @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-### 
 # export NCCL_DEBUG=DEBUG
 # export NCCL_IB_DISABLE=0
 # export NCCL_IB_HCA=mlx5_1:1
@@ -32,9 +23,9 @@
 # export WANDB_DISABLED=True
 
 
-# export NLTK_DATA=/ML-A100/team/mm/zhangge/gezhangmv/SKGLM/nltk_data
+export NLTK_DATA=/ML-A100/team/mm/zhangge/gezhangmv/SKGLM/nltk_data
 
-# echo $NLTK_DATA
+echo $NLTK_DATA
 
 kwargs=" 
 --overwrite_output_dir \
@@ -66,4 +57,4 @@ python eval.py $kwargs \
     --vllm true
 
 # run the evaluation script
-python -m pdb -c "c" eval_json.py --run_name ${CFG_PREFIX}
+python eval_json.py --run_name ${CFG_PREFIX}

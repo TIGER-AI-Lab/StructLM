@@ -105,7 +105,6 @@ class EvaluateTool(object):
             acc = self.finqa_eval(preds, golds)
             print("Acc: ", acc)
         except:
-            import pdb; pdb.post_mortem()
             # fall back to evaluating the python expression.
             acc = max(self.python_expression_eval(preds, golds), acc)
         return {"acc": acc}
