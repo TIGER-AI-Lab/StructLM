@@ -1,0 +1,174 @@
+{
+    "compwebq": {
+        "instruction": ["Answer the following question with the help of the given list of the knowledge graph triples.",
+                        "Using the list of knowledge graph triples, answer the following question.",
+                        "You will be given a list of knowledge graph triples. Answer the following question using the information in the triples.",
+                        "Answer the following questions using the information in the knowledge graph triples.",
+                        "Your task is to answer the following question using the information in the knowledge graph triples.",
+                        "Answer the following question using prior knowledge and the information in the knowledge graph triples.",
+                        "The following knowledge graph triples describe relationships between entities. Answer the following question using the information in the triples.",
+                        "Infer the correct response to the following question using the information in the knowledge graph triples.",
+                        "Use the given list of knowledge graph triples to infer the answer to the following question.",
+                        "Using the structured knowledge from the knowledge graph triples, infer the answer to the following question.",
+                        "Use the given knowledge graph triples to help you answer the following question."],
+        "input_format": "knowledge graph triples:\n\n{struct_in}\n\n\nquestion:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "cosql": {
+        "instruction": ["Respond with an SQL query using the SQL schema to answer the question below."],
+        "input_format": "SQL schema: {struct_in}\n\n\nquestion: {text_in}",
+        "output_format": "<seq_out>"
+    },
+    "dart": {
+        "instruction": ["Given a list of entity-relation triples, turn the triples into a natural language sentence.",
+                        "Given some entity-relation triples, convert them into a natural language sentence.",
+                        "Using the given list of entity-relation triples, describe the information presented in them.",
+                        "Paraphrase the information presented in the list of entity-relation triples.",
+                        "Write a sentence that describes the information presented in the list of entity-relation triples.",
+                        "Use the given list of entity-relation triples to write a sentence that describes the information presented in them.",
+                        "Explain the information presented in the list of entity-relation triples.",
+                        "Explain the information contained within the given list of entity-relation triples in a way that is easy to understand.",
+                        "Your task is to understand the information presented in the list of entity-relation triples and write a sentence that describes it.",
+                        "Given the list of entity-relation triples, write a sentence that describes the information presented in them."],
+        "input_format": "{struct_in}",
+        "output_format": "<seq_out>"
+    },
+    "fetaqa": {
+        "instruction": ["Answer the following question with the help of the given data table.",
+                        "Using the given data table, answer the following question.",
+                        "You will be given a data table. Answer the following question using the information in the table.",
+                        "Answer the following questions using the information in the data table.",
+                        "Your task is to answer the following question using the information in the data table.",
+                        "Answer the following question using the data table below.",
+                        "Infer the correct response to the following question using the information in the data table.",
+                        "Use the given data table to infer the answer to the following question.",
+                        "Using the structured knowledge from the data table, infer the answer to the following question.",
+                        "Use the given data table to help you answer the following question."],
+        "input_format": "data table:\n\n{struct_in}\n\n\nquestion:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "feverous": {
+        "instruction": ["Given the following evidence which may take the form of sentences or a data table, determine whether the evidence supports or refutes the following statement, or does not contain enough information.",
+                        "You will be given some evidence, which is either text or a data table. You will be given a statement. Decide whether that evidence supports or refutes the statement, or does not contain enough information.",
+                        "Determine wether the following statement is supported or refuted by the evidence provided, or determine if the evidence does not contain enough information.",
+                        "Provided with evidence in the form of text or a data table, assign the following statement one of three labels: supported, refuted, not enough information.",
+                        "The following statement is either supported or refuted by the evidence provided, or the evidence does not contain enough information. Determine which is the case.",
+                        "Given the following evidence, determine whether the evidence supports or refutes the following statement, or does not contain enough information.",
+                        "Provided with evidence in the form of text or a data table, determine whether the statement is supported, refuted, or not enough information.",
+                        "Infer whether the following statement is supported or refuted by the evidence provided, or determine if the evidence does not contain enough information.",
+                        "Use the structured information in the evidence to determine whether the following statement is supported or refuted by the evidence provided, or determine if the evidence does not contain enough information.",
+                        "Judge whether the following statement is supported or refuted based on the evidence provided, or determine if the evidence does not contain enough information."],
+        "input_format": "evidence:\n\n{struct_in}\n\n\nstatement:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "grailqa": {
+        "instruction": "Using the list of knowledge graph schema items, convert the following question into an s-expression that finds the answer",
+        "input_format": "knowledge graph triples:\n\n{struct_in}\n\n\nquestion:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "hybridqa": {
+        "instruction": "Answer the following question using the information in the data table and text passages provided.",
+        "input_format": "data table:\n\n{struct_in}\n\n\nquestion:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "kvret": {
+        "instruction": "Continue the following dialog given the information in the data table",
+        "input_format": "data table:\n\n{struct_in}\n\n\ndialog history:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "logic2text": {
+        "instruction": "Given the following table schema, convert the logical form into a natural language sentence.",
+        "input_format": "table schema:\n\n{struct_in}\n\n\nlogical form:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "mmqa": {
+        "instruction": "Given the following context (either a passage or a data table), answer the following question.",
+        "input_format": "context:\n\n{struct_in}\n\n\nquestion:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "mtop": {
+        "instruction": "Given the following API specification, convert the following natural language query to an API call in Task Oriented Parsing (TOP) representation.",
+        "input_format": "API specification:\n\n{struct_in}\n\n\nnatural language query:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "multiwoz": {
+        "instruction": "Given the following ontology and dialog history, return the current dialog state for each item in the ontology",
+        "input_format": "ontology:\n\n{struct_in}\n\n\ndialog history:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "sparc": {
+        "instruction": "Using the following serialized database schema, convert the latest query in the dialog to an SQL query",
+        "input_format": "database schema:\n\n{struct_in}\n\n\ndialog:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "spider": {
+        "instruction": "Convert the following question to an SQL query using the following database schema.",
+        "input_format": "database schema:\n\n{struct_in}\n\n\nquestion:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "sqa": {
+        "instruction": ["List out the answers to the latest question in the dialog based on the information in the given table."],
+        "input_format": "table:\n\n{struct_in}\n\n\ndialog:\n\n{text_in}",
+        "output_format": "<held out>"
+    },
+    "sql2text": {
+        "instruction": "Given the following SQL, convert it to a natural language sentence.",
+        "input_format": "{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "tab_fact": {
+        "instruction": "Using the information in the following table, determine if the statement is entailed or refuted by that information.",
+        "input_format": "table:\n\n{struct_in}\n\n\nstatement:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "totto": {
+        "instruction": "Convert the following snippet of a table to a natural language sentence describing the data it represents.",
+        "input_format": "{struct_in}",
+        "output_format": "<seq_out>"
+    },
+    "webqsp": {
+        "instruction": "Using the list of knowledge graph schema items, convert the following question into an s-expression that finds the answer.",
+        "input_format": "schema:\n\n{struct_in}\n\n\nquestion:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "wikisql": {
+        "instruction": "Use the information in the following table to answer the question.",
+        "input_format": "table:\n\n{struct_in}\n\n\nquestion:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "wikitq": {
+        "instruction": "Use the information in the following table to answer the question.",
+        "input_format": "table:\n\n{struct_in}\n\n\nquestion:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "bird": {
+        "instruction": "Write an SQL query for the question based on the following database schema",
+        "input_format": "database schema:\n\n{struct_in}\n\n\nquestion:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "tabmwp": {
+        "instruction": "Use the information in the following table to solve the problem, choose between the choices if they are provided.",
+        "input_format": "table:\n\n{struct_in}\n\n\nquestion:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "logicnlg": {
+        "instruction": "Use the information in the following table to infer a fact about the subjects in the table",
+        "input_format": "{struct_in}",
+        "output_format": "<seq_out>"
+    },
+    "finqa": {
+        "instruction": "Use the financial data in the following passage and table to calculate the answer the question.",
+        "input_format": "table:\n\n{struct_in}\n\n\nquestion:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "infotabs": {
+        "instruction": "Using the following key value pairs, determine if the statement is \"reasonable\", \"wrong\", or \"neither\".",
+        "input_format": "key value pairs:\n\n{struct_in}\n\n\nstatement:\n\n{text_in}",
+        "output_format": "<seq_out>"
+    },
+    "wikitabletext": {
+        "instruction": "Paraphrase the information contained in the following table into a sentence or two.",
+        "input_format": "{struct_in}",
+        "output_format": "<seq_out>"
+    }
+}

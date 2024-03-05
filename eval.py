@@ -30,14 +30,6 @@ class DummyDataset():
     def __getitem__(self, index):
         return {}
 
-def get_model(model):
-    Model = importlib.import_module('models.{}'.format(model)).Model
-    return Model
-
-def get_evaluator(evaluate_tool):
-    EvaluateTool = importlib.import_module('{}'.format(evaluate_tool)).EvaluateTool
-    return EvaluateTool
-
 def main() -> None:
     logging.basicConfig(level=logging.INFO)
 

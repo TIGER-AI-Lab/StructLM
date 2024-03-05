@@ -6,7 +6,7 @@ import copy
 import numpy as np
 
 import utils.tool
-from utils.configue import Configure
+from utils.configure import Configure
 from tqdm import tqdm
 
 
@@ -31,8 +31,6 @@ class EvaluateTool(object):
         lst = [(arg_path, preds_golds) for arg_path, preds_golds in wait_for_eval.items()]
         print([arg_path for arg_path, preds_golds in lst])
         for arg_path, preds_golds in tqdm(lst):
-            # if "tabmwp" not in arg_path:
-            #     continue
             print("Evaluating {}...".format(arg_path))
             args = Configure.refresh_args_by_file_cfg(os.path.join(meta_args.dir.configure, arg_path), meta_args)
             evaluator = utils.tool.get_evaluator(args.evaluate.tool)(args)

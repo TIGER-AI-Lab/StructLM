@@ -18,7 +18,7 @@ def main(args):
     # use import lib to import EvaluateTool from metrics.{args.dataset_name}.evaluator
     output_path= f"./output/{args.run_name}"
     predictions_path = os.path.join(output_path,"predictions_predict.json")
-    config_path = f"{args.run_name}/{args.run_name}.cfg"
+    config_path = f"{args.run_name}.cfg"
     args = Configure.Get(config_path)
     evaluator = importlib.import_module("metrics.meta_tuning.evaluator").EvaluateTool(args)
 

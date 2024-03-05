@@ -6,7 +6,7 @@ import copy
 import numpy as np
 
 import utils.tool
-from utils.configue import Configure
+from utils.configure import Configure
 
 
 class EvaluateTool(object):
