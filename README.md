@@ -4,10 +4,19 @@ This is the repository for the paper "StructLM: Towards Building Generalist Mode
 
 You can use this repository to evaluate the models. To reproduce the models, use [SKGInstruct](https://huggingface.co/datasets/TIGER-Lab/SKGInstruct) in your preferred finetuning framework.
 
+## Table of Contents
+  * [Links](#links)
+  * [Install Requirements](#install-requirements)
+  * [Download files](#download-files)
+  * [Run evaluation](#run-evaluation)
+  * [Acknowledgements](#acknowledgements)
+  * [Cite](#cite)
 
 ## Links
 - Arxiv Link: https://arxiv.org/abs/2402.16671
 - Website: https://tiger-ai-lab.github.io/StructLM/
+
+
 
 ## Evaluate StructLM-7B
 
