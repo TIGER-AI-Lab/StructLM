@@ -6,7 +6,7 @@ kwargs="
 "
 
 CFG_PREFIX=$1
-INP_MAX_LEN=${2:-2048}
+INP_MAX_LEN=${2:-2176}
 
 
 echo ""
