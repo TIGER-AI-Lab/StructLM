@@ -1,13 +1,12 @@
-kwargs=" 
---overwrite_output_dir \
---per_device_eval_batch_size 64 \
---generation_max_length 1024 \
---learning_rate 2e-5 \
-"
-
 CFG_PREFIX=$1
 INP_MAX_LEN=${2:-2176}
+EVAL_BSIZE=${3:-64}
 
+kwargs=" 
+--overwrite_output_dir \
+--per_device_eval_batch_size ${EVAL_BSIZE} \
+--generation_max_length 1024 \
+"
 
 echo ""
 echo "STARTING EVALUATION FOR: ${CFG_PREFIX}"
