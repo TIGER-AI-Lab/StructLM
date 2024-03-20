@@ -50,7 +50,7 @@ this will generate the results in
 You can also replace `StructLM-7B` with `StructLM-13B` or `StructLM-34B`, i.e.
 
 ```
-./run_test_eval.sh StructLM-13B`
+./run_test_eval.sh StructLM-13B
 ./run_test_eval.sh StructLM-34B
 ```
 
