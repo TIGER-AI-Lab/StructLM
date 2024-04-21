@@ -1,5 +1,5 @@
 CFG_PREFIX=$1
-INP_MAX_LEN=${2:-2176}
+INP_MAX_LEN=${2:-4096}
 EVAL_BSIZE=${3:-64}
 
 kwargs=" 
