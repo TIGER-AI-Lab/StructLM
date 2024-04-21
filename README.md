@@ -18,6 +18,8 @@ The processed test data is already provided, but the prompts used for training a
 - Arxiv Link: https://arxiv.org/abs/2402.16671
 - Website: https://tiger-ai-lab.github.io/StructLM/
 
+## News
+We added [StructLM-7B-mistral](https://huggingface.co/TIGER-Lab/StructLM-7B-Mistral), which is the strongest model across the board.
 
 
 ## Evaluate StructLM-7B
