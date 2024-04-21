@@ -19,8 +19,7 @@ The processed test data is already provided, but the prompts used for training a
 - Website: https://tiger-ai-lab.github.io/StructLM/
 
 ## News
-We added [StructLM-7B-mistral](https://huggingface.co/TIGER-Lab/StructLM-7B-Mistral), which is the strongest model across the board.
-
+We added [StructLM-7B-mistral](https://huggingface.co/TIGER-Lab/StructLM-7B-Mistral), which is stronger than both Llama-based 7B and 13B models in many cases.
 
 ## Evaluate StructLM-7B
 
