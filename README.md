@@ -50,6 +50,8 @@ this will download
 
 ### Run evaluation
 
+> For StructLM-7B-Mistral evaluation, generate the data file first using `python mistral-fix-data.py` after you have downloaded data to `./data/processed/skginstruct_test_file_7b.json`, for example. Then use the corresponding config file (i.e. StructLM-7B-Mistral)
+
 `./run_test_eval.sh StructLM-7B`
 
 this will generate the results in 
