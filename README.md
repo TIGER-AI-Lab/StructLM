@@ -23,7 +23,7 @@ We added [StructLM-7B-mistral](https://huggingface.co/TIGER-Lab/StructLM-7B-Mist
 
 ## Training
 
-Easy reproduction can be done with the [[Llama-Factory](https://github.com/hiyouga/LLaMA-Factory).
+Easy reproduction can be done with the [Llama-Factory](https://github.com/hiyouga/LLaMA-Factory).
 
 1. Follow the [data preparation steps](https://github.com/hiyouga/LLaMA-Factory/blob/main/data/README.md) on their repo to add one of the StructLM datasets from huggingface
 2. use the parameters in the bash script `StructLM_finetune.yaml`, as a reference
