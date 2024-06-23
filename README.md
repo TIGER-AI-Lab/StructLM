@@ -4,7 +4,7 @@ This is the repository for the paper "StructLM: Towards Building Generalist Mode
 
 You can use this repository to evaluate the models. To reproduce the models, use [SKGInstruct](https://huggingface.co/datasets/TIGER-Lab/SKGInstruct) in your preferred finetuning framework.
 
-The processed test data is already provided, but the prompts used for training and testing can be found in `/prompts`\
+The processed test data is already provided, but the prompts used for training and testing can be found in `/prompts`
 
 ## Table of Contents
   * [Links](#links)
