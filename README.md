@@ -18,9 +18,6 @@ The processed test data is already provided, but the prompts used for training a
 - Arxiv Link: https://arxiv.org/abs/2402.16671
 - Website: https://tiger-ai-lab.github.io/StructLM/
 
-## News
-We added [StructLM-7B-mistral](https://huggingface.co/TIGER-Lab/StructLM-7B-Mistral), which is stronger than both Llama-based 7B and 13B models in many cases.
-
 ## Training
 
 Easy reproduction can be done with the [Llama-Factory](https://github.com/hiyouga/LLaMA-Factory).
@@ -54,19 +51,24 @@ this will download
 ### Run evaluation
 
 #### For StructLM-7B-Mistral
-We can run the inference on the donwloaded structlm-mistral checkpoint.
+We can run the inference on the donwloaded checkpoint.
 ```
 python mistral-fix-data.py
 ./run_test_eval.sh StructLM-7B
 ```
 
-### For StructLM-13B/34B
+#### For StructLM-13B/34B
 You can download these models seperately with
+```
+huggingface-cli download --repo-type=model --local-dir=models/ckpts/StructLM-13B TIGER-Lab/StructLM-13B
+```
+Then, you can run the inference on the downloaded checkpoints.
 ```
 ./run_test_eval.sh StructLM-13B
 ./run_test_eval.sh StructLM-34B
 ```
-this will generate the results in `outputs/StructLM-*/`
+
+These evaluation will generate the results in `outputs/StructLM-*/`
 
 ## Acknowledgements
 
