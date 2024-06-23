@@ -2,7 +2,7 @@
 
 This is the repository for the paper "StructLM: Towards Building Generalist Models for Structured Knowledge Grounding". 
 
-You can use this repository to evaluate the models. To reproduce the models, use [SKGInstruct](https://huggingface.co/datasets/TIGER-Lab/SKGInstruct) in your preferred finetuning framework.
+You can use this repository to evaluate the models. To reproduce the models, use [SKGInstruct](https://huggingface.co/datasets/TIGER-Lab/SKGInstruct) in your preferred finetuning framework. The checkpoitns are being released on [Huggingface](https://huggingface.co/collections/TIGER-Lab/structlm-65dcab5a183c499cc365fafc).
 
 The processed test data is already provided, but the prompts used for training and testing can be found in `/prompts`
 
