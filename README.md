@@ -31,7 +31,7 @@ Easy reproduction can be done with the [Llama-Factory](https://github.com/hiyoug
 
 ## Evaluate StructLM-7B
 
-> 💡 Unfortunately, we have seen that the original StructLM-7B checkpoint is currently broken. Please instead use the Mistral-7B model which is **stronger**
+> 💡 Unfortunately, we have seen that the original StructLM-7B checkpoint is currently broken. Please use the [StructLM-7B-Mistral](https://huggingface.co/TIGER-Lab/StructLM-7B-Mistral) model instead.
 
 ### Install Requirements
 
