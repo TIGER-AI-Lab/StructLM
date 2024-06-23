@@ -47,27 +47,26 @@ Requirements:
 `./download.sh`
 
 this will download
-1. StructLM-7B
+1. StructLM-7B-Mistral
 2. The raw data required for executing evaluation
 3. The processed test data splits ready for evaluation
 
 ### Run evaluation
 
-> For StructLM-7B-Mistral evaluation, generate the data file first using `python mistral-fix-data.py` after you have downloaded data to `./data/processed/skginstruct_test_file_7b.json`, for example. Then use the corresponding config file (i.e. StructLM-7B-Mistral)
-
-`./run_test_eval.sh StructLM-7B`
-
-this will generate the results in 
-`outputs/StructLM-7B/`
-
-You can also replace `StructLM-7B` with `StructLM-13B` or `StructLM-34B`, i.e.
-
+#### For StructLM-7B-Mistral
+We can run the inference on the donwloaded structlm-mistral checkpoint.
 ```
-./run_test_eval.sh StructLM-13B`
+python mistral-fix-data.py
+./run_test_eval.sh StructLM-7B
+```
+
+### For StructLM-13B/34B
+You can download these models seperately with
+```
+./run_test_eval.sh StructLM-13B
 ./run_test_eval.sh StructLM-34B
 ```
-
-and download those models separately.
+this will generate the results in `outputs/StructLM-*/`
 
 ## Acknowledgements
 
