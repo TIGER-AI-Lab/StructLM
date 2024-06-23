@@ -54,7 +54,7 @@ this will download
 We can run the inference on the donwloaded checkpoint.
 ```
 python mistral-fix-data.py
-./run_test_eval.sh StructLM-7B
+./run_test_eval.sh StructLM-7B-Mistral
 ```
 
 #### For StructLM-13B/34B
