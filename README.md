@@ -1,6 +1,6 @@
 # StructLM
 
-This is the repository for the paper "StructLM: Towards Building Generalist Models for Structured Knowledge Grounding". 
+This is the repository for our COLM-2024 paper [StructLM: Towards Building Generalist Models for Structured Knowledge Grounding](https://arxiv.org/abs/2402.16671).
 
 You can use this repository to evaluate the models. To reproduce the models, use [SKGInstruct](https://huggingface.co/datasets/TIGER-Lab/SKGInstruct) in your preferred finetuning framework. The checkpoitns are being released on [Huggingface](https://huggingface.co/collections/TIGER-Lab/structlm-65dcab5a183c499cc365fafc).
 
