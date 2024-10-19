@@ -28,8 +28,6 @@ Easy reproduction can be done with the [Llama-Factory](https://github.com/hiyoug
 
 ## Evaluate StructLM-7B
 
-> 💡 Unfortunately, we have seen that the original StructLM-7B checkpoint is currently broken. Please use the [StructLM-7B-Mistral](https://huggingface.co/TIGER-Lab/StructLM-7B-Mistral) model instead.
-
 ### Install Requirements
 
 Requirements:
@@ -50,22 +48,31 @@ this will download
 
 ### Run evaluation
 
+#### For StructLM-7B/13B/34B
+You can download these models seperately with
+```
+huggingface-cli download --repo-type=model --local-dir=models/ckpts/StructLM-7B TIGER-Lab/StructLM-7B
+huggingface-cli download --repo-type=model --local-dir=models/ckpts/StructLM-13B TIGER-Lab/StructLM-13B
+huggingface-cli download --repo-type=model --local-dir=models/ckpts/StructLM-34B TIGER-Lab/StructLM-34B
+```
+
+Then, you can run the inference on the downloaded checkpoints.
+```
+./run_test_eval.sh StructLM-7B
+./run_test_eval.sh StructLM-13B
+./run_test_eval.sh StructLM-34B
+```
+
 #### For StructLM-7B-Mistral
+You can download these models seperately with
+```
+huggingface-cli download --repo-type=model --local-dir=models/ckpts/StructLM-7B-Mistral TIGER-Lab/StructLM-7B-Mistral
+```
+
 We can run the inference on the donwloaded checkpoint.
 ```
 python mistral-fix-data.py
 ./run_test_eval.sh StructLM-7B-Mistral
-```
-
-#### For StructLM-13B/34B
-You can download these models seperately with
-```
-huggingface-cli download --repo-type=model --local-dir=models/ckpts/StructLM-13B TIGER-Lab/StructLM-13B
-```
-Then, you can run the inference on the downloaded checkpoints.
-```
-./run_test_eval.sh StructLM-13B
-./run_test_eval.sh StructLM-34B
 ```
 
 These evaluation will generate the results in `outputs/StructLM-*/`
