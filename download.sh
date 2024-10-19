@@ -1,6 +1,3 @@
-# download the model
-huggingface-cli download --repo-type=model --local-dir=models/ckpts/StructLM-7B-Mistral TIGER-Lab/StructLM-7B-Mistral
-
 # download the data required for executing evaluation
 huggingface-cli download --repo-type=dataset --local-dir=data/downloads/extracted/ TIGER-Lab/SKGInstruct ./skg_raw_data.zip
 # unzip it in that folder
