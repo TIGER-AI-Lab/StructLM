@@ -42,9 +42,8 @@ Requirements:
 `./download.sh`
 
 this will download
-1. StructLM-7B-Mistral
-2. The raw data required for executing evaluation
-3. The processed test data splits ready for evaluation
+1. The raw data required for executing evaluation
+2. The processed test data splits ready for evaluation
 
 ### Run evaluation
 
@@ -64,7 +63,7 @@ Then, you can run the inference on the downloaded checkpoints.
 ```
 
 #### For StructLM-7B-Mistral
-You can download these models seperately with
+You can download the model with
 ```
 huggingface-cli download --repo-type=model --local-dir=models/ckpts/StructLM-7B-Mistral TIGER-Lab/StructLM-7B-Mistral
 ```
